@@ -1,7 +1,7 @@
 <?php
 require_once('connect.php');
 session_start();
-// ถ้ากด submit
+
 if (isset($_POST['regisItemSubmit']) && ($_SESSION['userStatus']=="ADMIN"||$_SESSION['userStatus']=="STAFF")){
 ?>
   <?php
@@ -48,9 +48,9 @@ for ($y = 0; $y < $countItemsRow; $y++) {
 
  ?>
  <?php
- // เช้ค member id ว่ามีหรือไม่มี
+
 $varObtainMemberId=0;
-// ติ้กไห้ไส่ id มา
+
  if($useMember == "1"){
    echo "kk";
  $q = "SELECT * FROM `member` WHERE memberId='".$memberIdToRegis."'";
@@ -64,12 +64,12 @@ $varObtainMemberId=0;
 
  }
 }
-// ติ้กไม่ไส่ไอดีมา
+
 elseif ($useMember == "0") {
   $varObtainMemberId=1;
   echo "ติ้กไม่ไส่ไอดี";
 }
-// ถ้าติ้กแต่ หาไอดีไม่เจอ หรือ ติ้ก แต่ ไส่มั่วมา
+
 else {
   $varObtainMemberId=0;
 }
